@@ -30,8 +30,10 @@ User Input → Intent Detection → Specialized Agent → LLM (Gemini) → Seman
 ---
 
 ### ⚙️ **Tech Stack**
-**LLM:** Google Gemini • **Framework:** LangChain  
-**Embeddings:** HuggingFace MiniLM • **Vector DB:** FAISS  
+**LLM:** Google Gemini 
+**Framework:** LangChain, Langgraph  
+**Embeddings:** HuggingFace MiniLM 
+**Vector DB:** FAISS  
 **APIs:** OpenFDA, PubMed, WGER, EuropePMC  
 **Visualization:** Matplotlib, Pillow, Rich CLI  
 
