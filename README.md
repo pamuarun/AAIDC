@@ -25,7 +25,7 @@ It uses an agentic workflow — each agent performs a specialized medical task, 
 ---
 
 ### 🧠 **Architecture**
-![Architecture Diagram](docs/architecture.png)
+![Architecture Diagram](docs/Architecture.png)
 
 **Flow Summary:**  
 User Input → Intent Detection → Specialized Agent → LLM (Gemini) → Semantic Evaluation → Output + Logging  
