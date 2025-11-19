@@ -156,3 +156,162 @@ This project was developed as part of the **AAIDC Module 2 Certification Program
 - **OpenFDA API** — For accurate drug information retrieval.  
 - **PubMed & EuropePMC** — For evidence-based research and clinical reference data.  
 - **WGER API** — For lifestyle, fitness, and diet planning integration.
+
+
+### 🧷 **System Reliability Enhancements**
+
+To strengthen MEDIBOT’s robustness and align with repository review feedback, several reliability improvements were added:
+
+✔️ Input Validation
+
+- All incoming user inputs undergo strict validation:
+
+- File type & size checks
+
+- Validation for numeric and medical text inputs
+
+- Safe parsing for PDFs, images, and clinical text
+
+- Prevention of malformed or empty queries
+
+- This ensures predictable and safe execution across all agents.
+
+✔️ Health Checks
+
+- The system performs periodic internal checks for:
+
+- LLM connectivity
+
+- Vectorstore availability
+
+- Agent responsiveness
+
+- Session memory stability
+
+These checks help detect issues early and prevent workflow failures.
+
+✔️ Retry Mechanisms
+
+Implemented for operations prone to temporary failure:
+
+- API timeout retries
+
+- Retrieval retries during FAISS/KNN failures
+
+- Graceful fallbacks with user-friendly messages
+
+- This ensures uninterrupted execution even in unstable network conditions.
+
+✔️ Graceful Error Handling
+
+- Clean fallback messages returned to the user
+
+- Errors logged as metadata for debugging
+
+- No raw stack traces exposed
+
+- Automatic agent fallback when failures occur
+
+### **🛠️ Troubleshooting & Maintenance**
+
+A structured troubleshooting and maintenance section has been added:
+
+## 🔧 Common Issues & Fixes
+
+- API key misconfiguration
+
+- Missing environment variables
+
+- FAISS index corruption
+
+- Network/API downtime
+
+- Model initialization failures
+
+### 🔄 **Vectorstore Maintenance**
+
+_ Clear and rebuild embeddings
+
+- Regenerate FAISS index
+
+- Validate vector integrity
+
+- Don't change the paths of vectorstore
+
+### 🧹 **Session & Memory Reset**
+
+- Reset session memory
+
+- Clear cached responses
+
+- Reload agent state
+
+These steps help developers quickly restore system stability.
+
+### 🧪 **Testing Strategy**
+
+MEDIBOT currently uses a manual, scenario-based testing approach, ensuring all components function as expected.
+
+✔️ Manual Unit-Level Testing
+
+Each agent was individually tested:
+
+- BMI Agent
+
+- Drug Info Agent
+
+- Diagnosis Agent
+
+- OCR Agent
+
+- Lifestyle Agent
+
+- Research Agent
+
+- Image Agent
+
+Each module’s functions were validated using controlled inputs.
+
+✔️ Integration-Level Testing
+
+Verified interactions between:
+
+- Orchestrator ↔ Agents
+
+- Agents ↔ Tools
+
+- RAG retrieval pipeline (Embeddings → FAISS → Output)
+
+- Checked for deadlocks, incorrect routing, or retrieval errors.
+
+✔️ End-to-End Testing
+
+Full workflows tested:
+
+- Symptom → Diagnosis
+
+- Drug name → FDA label retrieval
+
+- File upload → OCR → Summary
+
+- Exercise prompt → Fitness plan
+
+- Diagram prompt → Image generation
+
+All workflows executed successfully without failures.
+
+### **📊 Test Coverage (Manual)**
+
+Automated test coverage tools such as pytest --cov or coverage.py were not used.
+
+Instead:
+
+- Logs were checked for correctness
+
+- All workflows were validated manually
+
+- Error flows were verified
+
+- Execution stability confirmed across repeated runs
+
+- Future versions may include automated unit, integration, and CI-based coverage.
